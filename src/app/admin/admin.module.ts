@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { AdminRoutingModule } from './admin-routing.module';
+import { SchedulerComponent } from './scheduler/scheduler.component';
 
 @NgModule({
   imports: [
-    CommonModule,
-    AdminRoutingModule
+    CommonModule
   ],
-  declarations: []
+  declarations: [
+    SchedulerComponent
+  ],
+  exports: [
+    SchedulerComponent
+  ]
 })
 export class AdminModule { }
