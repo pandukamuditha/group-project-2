@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EmployeeComponent } from './employee.component';
-import { LandingModule } from './landing/landing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LandingComponent } from './landing/landing.component';
+import { CardComponent } from './landing/card/card.component';
+import { EmployeeRoutingModule } from './employee-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    EmployeeRoutingModule
   ],
   declarations: [
     EmployeeComponent,
-    LandingComponent
+    LandingComponent,
+    CardComponent
   ],
-  exports: [  ]
+  exports: [
+  ]
 })
 export class EmployeeModule { }

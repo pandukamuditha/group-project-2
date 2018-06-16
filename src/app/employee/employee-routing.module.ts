@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
+import { EmployeeComponent } from './employee.component';
 
 const routes: Routes = [
   {
-    path: '/employee',
+    path: 'employee',
+    component: EmployeeComponent,
     children: [
-      {path: '', component: LandingComponent}
+      {
+        path: 'hello',
+        component: LandingComponent
+      }
     ]
   }
 ];
