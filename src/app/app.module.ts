@@ -2,12 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { AdminModule } from './admin/admin.module';
 import { environment } from '../environments/environment';
-import { MaterialComponentsModule } from './material-components.module';
 
 @NgModule({
   declarations: [
@@ -15,9 +14,8 @@ import { MaterialComponentsModule } from './material-components.module';
   ],
   imports: [
     BrowserModule,
+    NgbModule.forRoot(),
     AdminModule,
-    BrowserAnimationsModule,
-    MaterialComponentsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
   ],

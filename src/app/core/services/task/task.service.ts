@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Task } from '../models/task';
+import { Task } from '../../models/task';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
   AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
-import { Project } from '../models/project';
+import { Project } from '../../models/project';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +18,6 @@ export class TaskService {
   constructor(
     private afs: AngularFirestore
   ) {
-    this.tasksCollection = this.afs.collection
+    // this.tasksCollection = this.afs.collection
   }
 }

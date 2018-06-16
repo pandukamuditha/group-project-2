@@ -1,9 +1,11 @@
 import { Component, OnInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
-import { Task } from '../../core/models/task';
-import { TaskService } from '../../core/services/task.service';
-
 import 'dhtmlx-gantt';
 import { } from '@types/dhtmlxgantt';
+
+import { Task } from '../../../core/models/task';
+import { TaskService } from '../../../core/services/task/task.service';
+import { SchedulingLightboxComponent } from '../scheduling-lightbox/scheduling-lightbox.component';
+
 
 @Component({
   selector: 'app-scheduler',
@@ -25,36 +27,8 @@ export class SchedulerComponent implements OnInit {
 
     gantt.init(this.ganttContainer.nativeElement);
 
-    let taskId;
+    gantt.attachEvent('onBeforeLightbox', () => {
 
-    gantt.attachEvent('onBeforeLightbox', (id) => {
-      this.renderer.setStyle(this.customLightbox.nativeElement, 'visibility', 'visible');
-      taskId = id;
-      const task = gantt.getTask(taskId);
-      if (task.$new) {
-        gantt.confirm({
-          text: 'Create task?',
-          callback: function (res) {
-            if (res) {
-              // ..apply values
-              gantt.addTask(task, '0');
-            } else {
-              gantt.deleteTask(task.id);
-            }
-          }
-        });
-        return false;
-      }
-      return true;
-    });
-
-    gantt.attachEvent('onAfterTaskAdd', (id, item) => {
-      this.taskService.insert(this.serializeTask(item, true))
-        .then((response) => {
-          if (response.id !== id) {
-            gantt.changeTaskId(id, response.id);
-          }
-        });
     });
   }
 
@@ -81,8 +55,8 @@ export class SchedulerComponent implements OnInit {
     return result;
   }
 
-  addTask() {
-    gantt.addTask();
+  showLightbox() {
+
   }
 }
 
