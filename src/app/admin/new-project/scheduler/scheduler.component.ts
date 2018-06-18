@@ -5,6 +5,7 @@ import { } from '@types/dhtmlxgantt';
 import { Task } from '../../../core/models/task';
 import { TaskService } from '../../../core/services/task/task.service';
 import { SchedulingLightboxComponent } from '../scheduling-lightbox/scheduling-lightbox.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -15,11 +16,11 @@ import { SchedulingLightboxComponent } from '../scheduling-lightbox/scheduling-l
 
 export class SchedulerComponent implements OnInit {
   @ViewChild('ganttHere') ganttContainer: ElementRef;
-  @ViewChild('customLightbox') customLightbox: ElementRef;
 
   constructor(
     private taskService: TaskService,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private modalService: NgbModal
   ) { }
 
   ngOnInit() {
@@ -28,7 +29,7 @@ export class SchedulerComponent implements OnInit {
     gantt.init(this.ganttContainer.nativeElement);
 
     gantt.attachEvent('onBeforeLightbox', () => {
-
+      this.showLightbox();
     });
   }
 
@@ -56,7 +57,7 @@ export class SchedulerComponent implements OnInit {
   }
 
   showLightbox() {
-
+    this.modalService.open(SchedulingLightboxComponent, { size: 'lg' });
   }
 }
 
