@@ -2,11 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { EmployeeRoutingModule } from './employee/employee-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { EmployeeComponent } from './employee/employee.component';
-import { LandingComponent } from './employee/landing/landing.component';
 import { EmployeeModule } from './employee/employee.module';
+import { HumanResourceModule } from './human-resource/human-resource.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +14,8 @@ import { EmployeeModule } from './employee/employee.module';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    EmployeeModule
+    EmployeeModule,
+    HumanResourceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

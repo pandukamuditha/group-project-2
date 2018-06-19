@@ -9,7 +9,7 @@ const routes: Routes = [
     component: EmployeeComponent,
     children: [
       {
-        path: 'hello',
+        path: 'landing',
         component: LandingComponent
       }
     ]
