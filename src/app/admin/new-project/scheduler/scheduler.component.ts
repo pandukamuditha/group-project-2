@@ -28,7 +28,9 @@ export class SchedulerComponent implements OnInit {
 
     gantt.init(this.ganttContainer.nativeElement);
 
-    gantt.attachEvent('onBeforeLightbox', () => {
+    gantt.attachEvent('onBeforeLightbox', (id) => {
+      const task = gantt.getTask(id);
+      console.log(id);
       this.showLightbox();
     });
   }

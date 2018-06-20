@@ -18,7 +18,7 @@
               </div>
             </div>
             <div class="col-10">
-              <input type="text" class="form-control" name="task-title" id="task-title" required>
+              <input type="text" class="form-control" name="task-title" id="task-title" [(ngModel)]="task.title" required>
             </div>
           </div>
         </div>
@@ -32,7 +32,7 @@
               </div>
             </div>
             <div class="col-10">
-              <textarea class="form-control" aria-label="With textarea" id="task-description" required></textarea>
+              <textarea class="form-control" aria-label="With textarea" id="task-description" name="task-description" [(ngModel)]="task.description" required></textarea>
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="">Role: </span>
               </div>
-              <select class="custom-select" id="task-role" required>
+              <select class="custom-select" id="task-role" name="task-role" [(ngModel)]="task.role" required>
                 <option *ngFor="let role of roles" [value]="role.value">{{ role.name }}</option>
               </select>
             </div>
@@ -56,7 +56,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="">No of employees: </span>
               </div>
-              <input type="number" class="form-control" id="task-employees" required>
+              <input type="number" class="form-control" id="task-employees" name="task-employees" [(ngModel)]="task.numEmployees" required>
             </div>
           </div>
 
@@ -66,7 +66,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="">Average skill level: </span>
               </div>
-              <select class="custom-select" id="task-skill-level" required>
+              <select class="custom-select" id="task-skill-level" name="task-skill-level" [(ngModel)]="task.skillLevel" required>
                 <option selected>Choose...</option>
                 <option value="0.5">50%</option>
                 <option value="0.6">60%</option>
@@ -87,8 +87,8 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="">Start Date: </span>
               </div>
-              <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [placement]="placement" ngbDatepicker #d="ngbDatepicker" id="task-start"
-                required>
+              <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [placement]="placement" ngbDatepicker #d="ngbDatepicker" name="task-start" id="task-start"
+              [(ngModel)]="task.startDate" required>
               <div class="input-group-append">
                 <button class="btn btn-link" (click)="d.toggle()" type="button">
                   <i class="material-icons">
@@ -104,7 +104,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="">Duration: </span>
               </div>
-              <input type="number" class="form-control" id="task-duration" required>
+              <input type="number" class="form-control" id="task-duration" name="task-duration" [(ngModel)]="task.duration" required>
               <div class="input-group-append">
                 <span class="input-group-text" id="">Days</span>
               </div>
@@ -118,6 +118,7 @@
   </div>
 
   <div class="modal-footer">
+    {{ task.title }}
     <button type="submit" class="btn btn-outline-primary" (click)="activeModal.close()">Save</button>
     <button type="button" class="btn btn-outline-primary" (click)="activeModal.close()">Cancel</button>
     <button type="button" class="btn btn-outline-danger" (click)="activeModal.close()">Delete</button>
