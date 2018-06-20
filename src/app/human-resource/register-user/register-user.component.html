@@ -1,27 +1,40 @@
 
-    <div class="container" style="margin-top: 100px">
+    <div class="container" style="margin-top: 60px">
+
+      <h2>User Registration</h2>
+      <br><br>
         <div class="row">
 
-          <div class="col-lg-5">
+          <div class="col-lg-12">
             <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
               <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="employeeService.selectedEmployee._id">
 
               <div class="row">
-                <div class="form-group col-lg-10">
+                <div class="form-group col-lg-5">
                   <label>Name :
                   </label>
                   <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="Enter full name" required>
                 </div>
+                <div class="form-group col-lg-5">
+                  <label>Username :
+                  </label>
+                  <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="Enter username" required>
+                </div>
               </div>
               <div class="row">
-                <div class="form-group col-lg-10">
+                <div class="form-group col-lg-5">
                   <label>Position :
                   </label>
                   <input type="text" class="form-control" name="position" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.position" placeholder="Enter position">                  
                 </div>
+                <div class="form-group col-lg-5">
+                  <label>Password :
+                  </label>
+                  <input type="text" class="form-control" name="password" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="Enter password" required>
+                </div>
               </div>
               <div class="row">
-                <div class="form-group col-lg-10">
+                <div class="form-group col-lg-5">
                   <label>Office :
                   </label>
                   <input type="text" class="form-control" name="office" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.office" placeholder="Enter office">                  
