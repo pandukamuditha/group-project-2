@@ -17,7 +17,7 @@
               <td>{{emp.name}}</td>
               <td>{{emp.position}}</td>
               <td>{{emp.office}}</td>
-              <td><a class="action-btn" (click)="onEdit(emp)"><i class="fas fa-pencil-alt"></i></a> &nbsp;&nbsp;&nbsp;
+              <td><a class="action-btn" (click)="onEdit(emp)" [routerLink]="['/hrmanager/register']"><i class="fas fa-pencil-alt"></i></a> &nbsp;&nbsp;&nbsp;
                 <a class="action-btn" (click)= "onDelete(emp._id,employeeForm)"><i class="fas fa-trash-alt"></i></a>
                 </td>
             </tr>

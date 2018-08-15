@@ -13,7 +13,7 @@ import { Employee } from './employee.model';
 export class HumanResourceService {
   selectedEmployee: Employee;
   employees: Employee[];
-  readonly baseURL = 'http://localhost:3000/employees';
+  readonly baseURL = 'http://localhost:3000/api/employee';
 
   constructor(private http: HttpClient) { }
 
