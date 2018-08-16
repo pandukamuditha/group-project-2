@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeModule } from './employee/employee.module';
 import { HumanResourceModule } from './human-resource/human-resource.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { HumanResourceModule } from './human-resource/human-resource.module';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule,
     EmployeeModule,
     HumanResourceModule
