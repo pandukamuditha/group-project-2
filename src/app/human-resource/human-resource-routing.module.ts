@@ -6,7 +6,7 @@ import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { HrLandingComponent } from './hr-landing/hr-landing.component';
 
 const routes: Routes = [
-  { path: 'hrmanager', 
+  { path: 'hrm',
   component: HumanResourceComponent,
     children: [
       {
