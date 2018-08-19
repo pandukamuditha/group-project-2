@@ -8,6 +8,8 @@ import { EmployeeModule } from './employee/employee.module';
 import { HumanResourceModule } from './human-resource/human-resource.module';
 import { FormsModule } from '@angular/forms';
 import { AdminModule } from './admin/admin.module';
+import { CommonModule } from '@angular/common';
+import { SharedModule } from './shared-components/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,10 @@ import { AdminModule } from './admin/admin.module';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     HttpClientModule,
+    SharedModule,
     AppRoutingModule,
     AdminModule,
     EmployeeModule,

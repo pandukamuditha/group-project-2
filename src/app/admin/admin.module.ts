@@ -3,22 +3,20 @@ import { CommonModule } from '@angular/common';
 
 
 import { AdminRoutingModule } from './admin-routing.module';
-import {NavBarComponent} from './nav-bar/nav-bar.component';
-import {TopBarComponent} from './top-bar/top-bar.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AdminComponent} from './admin.component';
+import { SharedModule } from '../shared-components/shared.module';
 
 
 
 @NgModule({
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    SharedModule
   ],
   declarations: [
     AdminComponent,
-    NavBarComponent,
-    TopBarComponent,
     DashboardComponent
   ],
   exports: [
