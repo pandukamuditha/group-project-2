@@ -1,0 +1,15 @@
+<div class="row justify-content-center align-items-center">
+  <div class="col-4 ">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="form-login">
+      <h3 class="form-login-heading">Login</h3>
+      <br>
+      <input #username="ngModel" [(ngModel)]="user.username" type="text" class="form-control" name="username" placeholder="Username" required autofocus>
+      <input #password="ngModel" [(ngModel)]="user.password" type="password" class="form-control" name="password" placeholder="Password" required>
+      <br>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+    <br>
+    <h6 *ngIf="errorMsg">{{ errorMsg }}</h6>
+  </div>
+
+</div>
