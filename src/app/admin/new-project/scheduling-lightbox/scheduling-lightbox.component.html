@@ -118,9 +118,8 @@
   </div>
 
   <div class="modal-footer">
-    {{ task.title }}
-    <button type="submit" class="btn btn-outline-primary" (click)="activeModal.close()">Save</button>
-    <button type="button" class="btn btn-outline-primary" (click)="activeModal.close()">Cancel</button>
-    <button type="button" class="btn btn-outline-danger" (click)="activeModal.close()">Delete</button>
+    <button type="submit" class="btn btn-outline-primary" (click)="saveTask()">Save</button>
+    <button type="button" class="btn btn-outline-primary" (click)="discardTask()">Cancel</button>
+    <button type="button" class="btn btn-outline-danger" (click)="deleteTask()">Delete</button>
   </div>
 </div>

@@ -1,7 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Task } from '../../../core/models/task';
-import { TaskService } from '../../../core/services/task/task.service';
 
 @Component({
   selector: 'app-scheduling-lightbox',
@@ -11,8 +10,9 @@ import { TaskService } from '../../../core/services/task/task.service';
 export class SchedulingLightboxComponent {
   // Placement of ngBootstrap Date Picker
   placement = 'top';
+  @Output() action = new EventEmitter();
 
-  public task = new Task(null, 'Hello', null, null, null, null, null, null);
+  public task = new Task(null, null, null, null, null, null, null, null);
 
   public roles = [
     {
@@ -27,4 +27,16 @@ export class SchedulingLightboxComponent {
 
   constructor(public activeModal: NgbActiveModal) {}
 
+  saveTask() {
+    this.action.emit(true);
+    this.activeModal.close();
+  }
+
+  discardTask() {
+
+  }
+
+  deleteTask() {
+
+  }
 }

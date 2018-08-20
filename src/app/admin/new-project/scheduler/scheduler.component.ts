@@ -16,6 +16,13 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 export class SchedulerComponent implements OnInit {
   @ViewChild('ganttHere') ganttContainer: ElementRef;
+  tasks = {
+    data: [
+      { id: 1, text: 'Project #1', start_date: '01-04-2017', duration: 18 },
+      { id: 2, text: 'Task #1', start_date: '02-04-2017', duration: 8, parent: 1 },
+      { id: 3, text: 'Task #2', start_date: '11-04-2017', duration: 8, parent: 1 }
+    ]
+  };
 
   constructor(
     private taskService: TaskService,
@@ -24,14 +31,20 @@ export class SchedulerComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    gantt.config.xml_date = '%Y-%m-%d %H:%i';
+    gantt.config.xml_date = '%d-%m-%Y %H:%i';
+    gantt.config.min_column_width = 8;
+    gantt.config.date_scale = '%d';
+    gantt.config.subscales = [
+      { unit: 'month', step: 1, date: '%M' }
+    ];
+    gantt.config.fit_tasks = true;
 
     gantt.init(this.ganttContainer.nativeElement);
+    gantt.parse(this.tasks);
 
     gantt.attachEvent('onBeforeLightbox', (id) => {
       const task = gantt.getTask(id);
-      console.log(id);
-      this.showLightbox();
+      this.showLightbox(task);
     });
   }
 
@@ -58,8 +71,24 @@ export class SchedulerComponent implements OnInit {
     return result;
   }
 
-  showLightbox() {
-    this.modalService.open(SchedulingLightboxComponent, { size: 'lg' });
+  showLightbox(task) {
+    let modelRef;
+    if (task.$new) {
+      modelRef = this.modalService.open(SchedulingLightboxComponent, { size: 'lg' });
+      modelRef.componentInstance.action.subscribe((value) => {
+        console.log(value);
+      });
+    } else {
+      console.log(task);
+      modelRef = this.modalService.open(SchedulingLightboxComponent, { size: 'lg' });
+      console.log(modelRef.componentInstance);
+      modelRef.componentInstance.task = {
+        title: task.text,
+        description: 'Hahaha',
+        startDate: task.start_date,
+        duration: task.duration
+      };
+    }
   }
 }
 
