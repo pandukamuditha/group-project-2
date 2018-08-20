@@ -7,11 +7,15 @@ import { CardComponent } from './landing/card/card.component';
 import { EmployeeRoutingModule } from './employee-routing.module';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { ProfileComponent } from './profile/profile.component';
+import { FormsModule } from '@angular/forms';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
+    FormsModule,
     EmployeeRoutingModule
   ],
   declarations: [
@@ -19,7 +23,9 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     LandingComponent,
     CardComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    ProfileComponent,
+    ProjectsComponent
   ],
   exports: [
   ]

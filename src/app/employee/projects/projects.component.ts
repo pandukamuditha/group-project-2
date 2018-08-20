@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../../services/projects.service';
-import { NgForm } from '@angular/forms';
 import { Projects } from '../../services/projects.model';
 
 @Component({
-  selector: 'app-landing',
-  templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.css']
+  selector: 'app-projects',
+  templateUrl: './projects.component.html',
+  styleUrls: ['./projects.component.css']
 })
-export class LandingComponent implements OnInit {
+export class ProjectsComponent implements OnInit {
 
   constructor(private projectsService: ProjectsService) { }
 
@@ -17,7 +16,7 @@ export class LandingComponent implements OnInit {
   }
 
   refreshProjectsList(){
-    this.projectsService.getProjects('2').subscribe((res) => {
+    this.projectsService.getAllProjects('2').subscribe((res) => {
       this.projectsService.projects = res as Projects[];
       // console.log("frontend");
     });

@@ -1,0 +1,21 @@
+<div>
+    <h2>All Projects</h2>
+</div>
+
+<div class="row">
+  <div *ngFor="let project of projectsService.projects" >
+      <div class="col-lg-6">
+            <div class="card" style="margin: 20px; width: 500px">
+                  <div class="card-body">
+                        <h5 class="card-title">{{project.proj_title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{project.task_description}}</h6>
+                        <p class="card-text">{{project.proj_description}}</p>
+                        <div *ngFor="let task of projectsService.tasks" >
+
+                        </div>
+                        <a routerLink="" class="card-link">Goto Task</a>                             
+                  </div>
+            </div>
+      </div>
+    </div>
+  </div>
