@@ -26,7 +26,10 @@
     "ng-toast": "^2.0.0",
     "npm": "^6.1.0",
     "rxjs": "^6.1.0",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "@ng-bootstrap/ng-bootstrap": "3.0.0",
+    "bootstrap": "^4.1.1",
+    "dhtmlx-gantt": "5.2.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.1",
@@ -36,6 +39,7 @@
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
+    "@types/dhtmlxgantt": "^4.0.34",
     "codelyzer": "^4.0.1",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",

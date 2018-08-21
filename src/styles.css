@@ -1,3 +1,1 @@
-html,body {
-    height: 100%;
-}
+@import "../node_modules/dhtmlx-gantt/codebase/skins/dhtmlxgantt_material.css";
