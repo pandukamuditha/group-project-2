@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 //import 'rxjs/add/operator/toPromise';
 import { FormsModule }   from '@angular/forms';
 import { Employee } from './employee.model';
+import { Skill } from './skill.model';
 
 
 @Injectable({
@@ -13,6 +14,7 @@ import { Employee } from './employee.model';
 export class HumanResourceService {
   selectedEmployee: Employee;
   employees: Employee[];
+  skills: Skill[];
   readonly baseURL = 'http://localhost:3000/employee';
 
   constructor(private http: HttpClient) { }
@@ -23,6 +25,11 @@ export class HumanResourceService {
 
   getEmployeeList(){
     return this.http.get(this.baseURL);
+  }
+
+  getSkillList(emp : Employee){
+    console.log(emp.emp_id);
+    return this.http.get(this.baseURL + `/skills/${emp.emp_id}`);
   }
 
   putEmployee(emp : Employee){

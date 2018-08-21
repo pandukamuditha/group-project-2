@@ -3,6 +3,7 @@ import { HumanResourceService } from '../hr-services/human-resource.service';
 import { NgForm } from '@angular/forms';
 import { Employee } from '../hr-services/employee.model';
 import { FormsModule }   from '@angular/forms';
+import { Skill } from '../hr-services/skill.model';
 
 declare var M: any; 
 
@@ -13,14 +14,16 @@ declare var M: any;
 })
 export class UpdateUserComponent implements OnInit {
 
-  
   flag = false;
 
   constructor(private employeeService: HumanResourceService) { }
 
+  emp = this.employeeService.selectedEmployee;
+
   ngOnInit() {
     // this.resetForm();
     this.refreshEmployeeList();
+    this.refreshSkillList(this.emp);
   }
 
   resetForm(form?: NgForm){
@@ -55,7 +58,14 @@ export class UpdateUserComponent implements OnInit {
   refreshEmployeeList(){
     this.employeeService.getEmployeeList().subscribe((res) => {
       this.employeeService.employees = res as Employee[];
-      console.log(res);
+      // console.log(res);
+    });
+  }
+
+  refreshSkillList(emp: Employee){
+    this.employeeService.getSkillList(emp).subscribe((res) => {
+      this.employeeService.skills = res as Skill[];
+      // console.log(res);
     });
   }
 
