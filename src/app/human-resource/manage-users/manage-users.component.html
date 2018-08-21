@@ -10,6 +10,7 @@
                 <th>Name</th>
                 <th>Address</th>
                 <th>Contact No.</th>
+                <th>Skill Set</th>
                 <th></th>
               </tr>
             </thead>
@@ -17,7 +18,8 @@
               <td>{{emp.emp_name}}</td>
               <td>{{emp.emp_address}}</td>
               <td>{{emp.emp_contactno}}</td>
-              <td><a class="action-btn" (click)="onEdit(emp)"><i class="fas fa-pencil-alt"></i></a> &nbsp;&nbsp;&nbsp;
+              <td>{{emp.type}}</td>
+              <td><a class="action-btn" (click)="onEdit(emp)" ><i class="fas fa-pencil-alt"></i></a> &nbsp;&nbsp;&nbsp;
                 <a class="action-btn" (click)= "onDelete(emp.emp_id)"><i class="fas fa-trash-alt"></i></a>
                 </td>
             </tr>

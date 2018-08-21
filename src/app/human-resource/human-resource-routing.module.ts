@@ -4,6 +4,7 @@ import { HumanResourceComponent } from './human-resource.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { HrLandingComponent } from './hr-landing/hr-landing.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 const routes: Routes = [
   { path: 'hrmanager', 
@@ -20,6 +21,10 @@ const routes: Routes = [
       {
         path: 'landing',
         component: HrLandingComponent
+      },
+      {
+        path: 'update',
+        component: UpdateUserComponent
       }
     ] 
 

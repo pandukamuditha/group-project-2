@@ -1,0 +1,33 @@
+
+            <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="employeeService.selectedEmployee.emp_id">
+  
+                <div class="row">
+                  <div class="form-group col-lg-5">
+                    <label>Name :
+                    </label>
+                    <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.emp_name" placeholder="Enter full name" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-5">
+                    <label>Address :
+                    </label>
+                    <input type="text" class="form-control" name="address" #address="ngModel" [(ngModel)]="employeeService.selectedEmployee.emp_address" placeholder="Enter address">                  
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-5">
+                    <label>Contact No :
+                    </label>
+                    <input type="text" class="form-control" name="contactno" #contactno="ngModel" [(ngModel)]="employeeService.selectedEmployee.emp_contactno" placeholder="Enter contact no.">                  
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="form-group">
+                    <button class="btn btn-success" style="margin-left: 100px" type="submit" [disabled]="!employeeForm.valid" >Submit</button>
+                    <button class="btn btn-primary" style="margin-left: 50px" type="button" (click)="resetForm(employeeForm)" >Reset</button>                  
+                  </div>
+                </div>
+              </form>

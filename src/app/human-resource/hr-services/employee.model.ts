@@ -3,5 +3,5 @@ export class Employee {
     name: string;
     address: string;
     contactno: string;
-
+    type: string;
 }

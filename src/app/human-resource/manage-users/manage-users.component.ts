@@ -31,7 +31,8 @@ export class ManageUsersComponent implements OnInit {
       _id: "",
       name: "",
       address: "",
-      contactno: ""
+      contactno: "",
+      type: ""
     }
   }
 
