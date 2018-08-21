@@ -13,7 +13,7 @@ import { Employee } from './employee.model';
 export class HumanResourceService {
   selectedEmployee: Employee;
   employees: Employee[];
-  readonly baseURL = 'http://localhost:3000/api/employee';
+  readonly baseURL = 'http://localhost:3000/employee';
 
   constructor(private http: HttpClient) { }
 
@@ -22,6 +22,7 @@ export class HumanResourceService {
   }
 
   getEmployeeList(){
+    // console.log('frontend-in');
     return this.http.get(this.baseURL);
   }
 
