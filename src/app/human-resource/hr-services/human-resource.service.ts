@@ -22,7 +22,6 @@ export class HumanResourceService {
   }
 
   getEmployeeList(){
-    // console.log('frontend-in');
     return this.http.get(this.baseURL);
   }
 

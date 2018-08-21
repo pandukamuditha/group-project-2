@@ -14,10 +14,13 @@ declare var M: any;
 })
 export class ManageUsersComponent implements OnInit {
 
+  
+  flag = false;
+
   constructor(private employeeService: HumanResourceService) { }
 
   ngOnInit() {
-    this.resetForm();
+    // this.resetForm();
     this.refreshEmployeeList();
   }
 
@@ -27,8 +30,8 @@ export class ManageUsersComponent implements OnInit {
     this.employeeService.selectedEmployee = {
       _id: "",
       name: "",
-      position: "",
-      office: ""
+      address: "",
+      contactno: ""
     }
   }
 
@@ -52,18 +55,20 @@ export class ManageUsersComponent implements OnInit {
   refreshEmployeeList(){
     this.employeeService.getEmployeeList().subscribe((res) => {
       this.employeeService.employees = res as Employee[];
+      console.log(res);
     });
   }
 
   onEdit(emp: Employee){
     this.employeeService.selectedEmployee = emp;
+    this.flag = true;
   }
 
-  onDelete(_id: string, form: NgForm){
+  onDelete(_id: string){
     if (confirm('Are you sure to delete this record?') == true){
       this.employeeService.deleteEmployee(_id).subscribe((res) => {
         this.refreshEmployeeList();
-        this.resetForm(form);
+        // this.resetForm(form);
         // M.toast({ html: 'Deleted Successfully', classes: 'rounded' })
       });
     }

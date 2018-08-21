@@ -17,7 +17,7 @@ export class RegisterUserComponent implements OnInit {
 
   ngOnInit() {
     this.resetForm();
-    this.refreshEmployeeList();
+    // this.refreshEmployeeList();
   }
 
   resetForm(form?: NgForm){
@@ -26,8 +26,8 @@ export class RegisterUserComponent implements OnInit {
     this.employeeService.selectedEmployee = {
       _id: "",
       name: "",
-      position: "",
-      office: ""
+      address: "",
+      contactno: ""
     }
   }
 
@@ -35,7 +35,7 @@ export class RegisterUserComponent implements OnInit {
     if(form.value._id == ""){
     this.employeeService.postEmployee(form.value).subscribe((res) => {
       this.resetForm(form);
-      this.refreshEmployeeList();
+      // this.refreshEmployeeList();
       // M.toast({html: 'Saved successfully', classes: 'rounded'});
     });
     }
