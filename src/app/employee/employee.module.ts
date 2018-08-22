@@ -7,6 +7,9 @@ import { CardComponent } from './landing/card/card.component';
 import { EmployeeRoutingModule } from './employee-routing.module';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { ProfileComponent } from './profile/profile.component';
+import { FormsModule } from '@angular/forms';
+import { ProjectsComponent } from './projects/projects.component';
 import { FormsModule } from '@angular/forms';
 import { AddNotesComponent } from './task-details/add-notes/add-notes.component';
 import { CalendarComponent } from './task-details/calendar/calendar.component';
@@ -22,6 +25,7 @@ import { NgbCalendar, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     HttpClientModule,
     FormsModule,
+    EmployeeRoutingModule
     EmployeeRoutingModule,
     NgbModule,
     NgCircleProgressModule.forRoot({
@@ -40,6 +44,8 @@ import { NgbCalendar, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CardComponent,
     NavbarComponent,
     SidebarComponent,
+    ProfileComponent,
+    ProjectsComponent
     AddNotesComponent,
     CalendarComponent,
     ProjectDetailsComponent,
