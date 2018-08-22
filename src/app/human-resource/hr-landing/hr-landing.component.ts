@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HrLandingComponent implements OnInit {
 
   constructor() { }
+  
 
   ngOnInit() {
   }

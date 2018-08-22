@@ -9,6 +9,7 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { FormsModule } from '@angular/forms';
 import { FormsModule }   from '@angular/forms';
 import { HrLandingComponent } from './hr-landing/hr-landing.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,7 @@ import { HrLandingComponent } from './hr-landing/hr-landing.component';
     HumanResourceComponent, 
     ManageUsersComponent, 
     RegisterUserComponent, 
-    HrLandingComponent
+    HrLandingComponent, UpdateUserComponent
   ]
 })
 export class HumanResourceModule { }

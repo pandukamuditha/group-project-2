@@ -1,0 +1,77 @@
+<div class="container" style="margin-top: 60px">
+    <h2>Update user</h2>
+    <br><br>
+            <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="employeeService.selectedEmployee.emp_id">
+  
+                <div class="row">
+                    <div class="col-lg-5">
+                      <!-- <div class="row"> -->
+                        <div class="form-group">
+                          <label>Name :
+                          </label>
+                          <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.emp_name" placeholder="Enter full name" required>
+                        </div>
+                      <!-- </div> -->
+                      <!-- <div class="row"> -->
+                        <div class="form-group">
+                          <label>Address :
+                          </label>
+                          <input type="text" class="form-control" name="address" #address="ngModel" [(ngModel)]="employeeService.selectedEmployee.emp_address" placeholder="Enter address">                  
+                        </div>
+                      <!-- </div> -->
+                      <!-- <div class="row"> -->
+                        <div class="form-group">
+                          <label>Contact No :
+                          </label>
+                          <input type="text" class="form-control" name="contactno" #contactno="ngModel" [(ngModel)]="employeeService.selectedEmployee.emp_contactno" placeholder="Enter contact no.">                  
+                        </div>
+                      <!-- </div> -->
+                    </div>
+  
+                    <div class="col-lg-5">
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect1">Skill Set</label>
+                          <select class="form-control" id="exampleFormControlSelect1" name="type" #type="ngModel" [(ngModel)]="employeeService.selectedEmployee.type" >
+                            <option>Developer-Frontend</option>
+                            <option>Developer-Backend</option>
+                            <option>UI/UX</option>
+                            <option>QA</option>
+                          </select>
+                        </div>
+  
+                        <!-- <label for="">Skills</label><br>
+                        <div class="form-check">                        
+                          <label class="form-check-label" for="defaultCheck1">
+                            Default checkbox
+                          </label>
+                          <input class="form-check-input"  style="margin-left: 40px" type="checkbox" value="" id="defaultCheck1">                        
+                        </div> -->
+
+                        <table class="table table-hover text-center" style="margin-left: 20px" >
+                          <thead>
+                            <tr>
+                              <th>Skill</th>
+                              <th>Skill Level</th>
+                            </tr>
+                          </thead>
+                          <tr *ngFor="let emp of employeeService.skills">
+                            <!-- <td><input type="text" class="form-control" name="contactno" #contactno="ngModel" [(ngModel)]="employeeService.skills.skill_level" placeholder="{{emp.skill_level}}"></td> -->
+                            <td>{{emp.skill_name}}</td>
+                            <td>{{emp.skill_level}}</td>
+                            <!-- <td><a class="action-btn" (click)="onEdit(emp)" [routerLink] = "['/hrmanager/update']" ><i class="fas fa-pencil-alt"></i></a> &nbsp;&nbsp;&nbsp;
+                              <a class="action-btn" (click)= "onDelete(emp.emp_id)"><i class="fas fa-trash-alt"></i></a>
+                            </td> -->
+                          </tr>
+                        </table>
+                    </div>
+                  </div>
+                
+                <div class="row">
+                  <div class="form-group">
+                    <button class="btn btn-success" style="margin-left: 100px" type="submit" [disabled]="!employeeForm.valid" >Submit</button>
+                    <button class="btn btn-primary" style="margin-left: 50px" type="button" (click)="resetForm(employeeForm)" >Reset</button>                  
+                  </div>
+                </div>
+              </form>
+</div>

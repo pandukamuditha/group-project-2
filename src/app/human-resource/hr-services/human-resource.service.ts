@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Employee } from './employee.model';
+import { Skill } from './skill.model';
 
 
 @Injectable({
@@ -10,7 +11,9 @@ import { Employee } from './employee.model';
 export class HumanResourceService {
   selectedEmployee: Employee;
   employees: Employee[];
-  readonly baseURL = 'http://localhost:3000/api/employee';
+  skills: Skill[];
+  readonly baseURL = 'http://localhost:3000/employee';
+
 
   constructor(private http: HttpClient) { }
 
@@ -22,7 +25,13 @@ export class HumanResourceService {
     return this.http.get(this.baseURL);
   }
 
-  putEmployee(emp: Employee) {
+  getSkillList(emp : Employee){
+    console.log(emp.emp_id);
+    return this.http.get(this.baseURL + `/skills/${emp.emp_id}`);
+  }
+
+  putEmployee(emp : Employee){
+
     return this.http.put(this.baseURL + `/${emp._id}`, emp);
   }
 
