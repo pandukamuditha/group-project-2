@@ -16,11 +16,8 @@ import { SharedModule } from '../shared-components/shared.module';
     CommonModule,
     HttpClientModule,
     FormsModule,
-<<<<<<< HEAD
-=======
     SharedModule,
     HumanResourceRoutingModule,
->>>>>>> 00005b81c6973bb0e4f99e5a3b892c48dc38b7cb
     HumanResourceRoutingModule,
     FormsModule
   ],
