@@ -8,7 +8,7 @@ import { Tasks } from './task.model';
 })
 export class ProjectsService {
   projects: Projects[];
-  tasks: Tasks[];
+  tasks = [];
   readonly baseURL = 'http://localhost:3000/project';
 
 
@@ -26,4 +26,4 @@ export class ProjectsService {
     return this.http.get(this.baseURL + `/tasks/${_id}`);
   }
   
-}
+} 

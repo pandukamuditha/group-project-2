@@ -10,9 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeModule } from './employee/employee.module';
 import { HumanResourceModule } from './human-resource/human-resource.module';
-import { FormsModule } from '@angular/forms';
+// import { FormsModule } from '@angular/forms';
 import { SharedModule } from './shared-components/shared.module';
-import { SharedModule } from './shared-components/shared.module';
+// import { SharedModule } from './shared-components/shared.module';
 
 @NgModule({
   declarations: [

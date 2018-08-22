@@ -23,9 +23,11 @@
                               
                               <a class="action-btn" (click)="getTasks(project.proj_id)"><h6>View Tasks</h6></a>
                               <div class="container" *ngIf="flag">
-                                    <div id="project.proj_id" *ngFor="let tasks of projectsService.tasks">
+                                    <!-- <div id="project.proj_id" *ngFor="let tasks of projectsService.tasks">
                                           <p style="margin-left: 20px">{{tasks.task_description}}</p>
-                                    </div>
+                                    </div> -->
+                                    <!-- <p>{{tasks[0][0].task_description}}</p> -->
+                                    
                               </div>
                         </div>
                   </div>

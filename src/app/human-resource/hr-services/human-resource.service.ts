@@ -26,8 +26,8 @@ export class HumanResourceService {
   }
 
   getSkillList(emp : Employee){
-    console.log(emp.emp_id);
-    return this.http.get(this.baseURL + `/skills/${emp.emp_id}`);
+    console.log(emp._id);
+    return this.http.get(this.baseURL + `/skills/${emp._id}`);
   }
 
   putEmployee(emp : Employee){
