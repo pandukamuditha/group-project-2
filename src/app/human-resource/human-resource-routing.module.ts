@@ -7,7 +7,7 @@ import { HrLandingComponent } from './hr-landing/hr-landing.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 
 const routes: Routes = [
-  { path: 'hrmanager', 
+  { path: 'hrm',
   component: HumanResourceComponent,
     children: [
       {

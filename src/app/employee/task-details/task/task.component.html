@@ -1,0 +1,30 @@
+<!-- <p>
+task works!
+</p> -->
+
+<div class="task">
+  <h2>Your Task</h2>
+  <div class="task-header">
+    {{task_description}}
+  </div>
+  <form (ngSubmit)="onSubmit()" #subtaskForm="ngForm">
+    <div class="form-group subtask-text">
+      <input class="form-control" type="text" name="content" #content="ngModel" [(ngModel)]="newSubtask.subtask_description" placeholder="Sub Task">
+    </div>
+    <div class="add-subtask">
+      <button type="submit" class="btn btn-primary btn-sm add-subtask"><i class="fas fa-plus"></i></button>
+    </div>
+  </form>
+  <div class="subtask-list">
+    <div *ngFor="let subtask of subTasks">
+      <label class="container">{{subtask.subtask_description}}
+          <input type="checkbox" [checked]="subtask.status" value="{{subtask.subtask_id}}" (change)="onTaskChange($event, subtask.subtask_id)">
+          <span class="checkmark"></span>
+        </label>
+    </div>
+  </div>
+
+  <div class="progress-details">
+    <circle-progress [percent]="percentage"></circle-progress>
+  </div>
+</div>

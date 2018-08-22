@@ -1,0 +1,11 @@
+.gantt-chart{
+    margin-top: 2%;
+    display: block;
+    position: relative;
+    width: 100%;
+} 
+
+.button-continue {
+    margin-top: 0;
+    margin-left: 85%;
+}

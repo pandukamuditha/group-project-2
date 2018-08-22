@@ -1,0 +1,119 @@
+<div class="scheduler-lightbox">
+  <div class="modal-header">
+    <h5 class="modal-title">Add Task</h5>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="container">
+      <form action="" #lightbox="ngForm">
+         <!-- Title -->
+        <div class="row">
+          <div class="input-group">
+            <div class="col-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="">Title: </span>
+              </div>
+            </div>
+            <div class="col-10">
+              <input type="text" class="form-control" name="task-title" id="task-title" [(ngModel)]="task.title" required>
+            </div>
+          </div>
+        </div>
+         <!-- Description -->
+        <div class="row justify-content-center">
+          <div class="input-group">
+            <div class="col-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="">Description: </span>
+              </div>
+            </div>
+            <div class="col-10">
+              <textarea class="form-control" aria-label="With textarea" id="task-description" name="task-description" [(ngModel)]="task.description" required></textarea>
+            </div>
+          </div>
+        </div>
+         <div class="row">
+          <!-- Job Role -->
+          <div class="col-4">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="">Role: </span>
+              </div>
+              <select class="custom-select" id="task-role" name="task-role" [(ngModel)]="task.type" required>
+                <option *ngFor="let role of roles" [value]="role.value">{{ role.name }}</option>
+              </select>
+            </div>
+          </div>
+           <!-- Number of Employees -->
+          <div class="col-3">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="">No of employees: </span>
+              </div>
+              <input type="number" class="form-control" id="task-employees" name="task-employees" [(ngModel)]="task.teamRequirement" required>
+            </div>
+          </div>
+           <!-- Skill Level -->
+          <div class="col-4">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="">Average skill level: </span>
+              </div>
+              <select class="custom-select" id="task-skill-level" name="task-skill-level" [(ngModel)]="task.skillRequirement" required>
+                <option selected>Choose...</option>
+                <option value="0.5">50%</option>
+                <option value="0.6">60%</option>
+                <option value="0.7">70%</option>
+                <option value="0.8" selected>80%</option>
+                <option value="0.9">90%</option>
+                <option value="1">100%</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          
+        </div>
+        
+         <hr>
+         <div class="row">
+          <div class="col-4">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="">Start Date: </span>
+              </div>
+              <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [placement]="placement" ngbDatepicker #d="ngbDatepicker" name="task-start" id="task-start"
+              [(ngModel)]="task.start_date" required>
+              <div class="input-group-append">
+                <button class="btn btn-link" (click)="d.toggle()" type="button">
+                  <i class="material-icons">
+                    calendar_today
+                  </i>
+                </button>
+              </div>
+            </div>
+          </div>
+           <div class="col-3">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="">Duration: </span>
+              </div>
+              <input type="number" class="form-control" id="task-duration" name="task-duration" [(ngModel)]="task.duration" required>
+              <div class="input-group-append">
+                <span class="input-group-text" id="">Days</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+     </div>
+   </div>
+   <div class="modal-footer">
+    <button type="submit" class="btn btn-outline-primary" (click)="saveTask()">Save</button>
+    <button type="button" class="btn btn-outline-primary" (click)="discardTask()">Cancel</button>
+    <button type="button" class="btn btn-outline-danger" (click)="deleteTask()">Delete</button>
+  </div>
+</div>

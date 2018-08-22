@@ -1,0 +1,12 @@
+<!-- <p>
+  team works!
+</p> -->
+
+<div class="team">
+  <h3>Your Team</h3>
+  {{errorMessage}}
+  <ul class="list-group">
+    <li *ngFor="let teammate of teammates" class="list-group-item">
+      {{teammate.name}} => {{teammate.task}}</li>
+
+  </ul>

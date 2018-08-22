@@ -1,0 +1,37 @@
+<div>
+    <h2>Personal Info</h2>
+</div>
+
+  <div class="row">
+      <div class="col-lg-1"></div>
+    <div class="col-lg-5">
+      <form class="form-group" #empForm="ngForm" (ngSubmit)="onSubmit(empForm)">
+
+        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="employee.emp_id" placeholder="{{ employee.emp_id }}">
+        
+        <div class="form-group">
+          <label>Name</label>
+          <input class="form-control" type="text" name="name" #name="ngModel" [(ngModel)]="emp_name" placeholder="{{ employee.emp_name }}" >
+        </div>
+        <div class="form-group">
+          <label>Address</label>
+          <input class="form-control" type="text" name="name" #name="ngModel" [(ngModel)]="emp_address" placeholder="{{ employee.emp_address }}" >
+        </div>
+        <div class="form-group">
+          <label>Contact No.</label>
+          <input class="form-control" type="text" name="name" #name="ngModel" [(ngModel)]="emp_contactno" placeholder="{{ employee.emp_contactno }}" >
+        </div>
+        <div class="form-group">
+          <label>Emp Role</label>
+          <input class="form-control" type="text" name="name" #name="ngModel" [(ngModel)]="emp_role" placeholder="{{ employee.emp_role }}" >
+        </div>
+
+
+        <div class="row text-center">
+          <div class="input-field col s12"><button class="btn btn-success right" type="submit"  style="margin-left: 10px">Update</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

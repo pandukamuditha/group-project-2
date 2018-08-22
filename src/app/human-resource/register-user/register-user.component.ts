@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { HumanResourceService } from '../hr-services/human-resource.service';
 import { NgForm } from '@angular/forms';
 import { Employee } from '../hr-services/employee.model';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
-declare var M: any; 
+declare var M: any;
 
 @Component({
   selector: 'app-register-user',
@@ -21,26 +21,27 @@ export class RegisterUserComponent implements OnInit {
   }
 
   resetForm(form?: NgForm){
-    if (form)
+    if (form) {
       form.reset();
+    }
     this.employeeService.selectedEmployee = {
       _id: "",
       name: "",
       address: "",
       contactno: "",
       type: ""
+
     }
   }
 
-  onSubmit(form: NgForm){
-    if(form.value._id == ""){
+  onSubmit(form: NgForm) {
+    if (form.value._id === '') {
     this.employeeService.postEmployee(form.value).subscribe((res) => {
       this.resetForm(form);
       // this.refreshEmployeeList();
       // M.toast({html: 'Saved successfully', classes: 'rounded'});
     });
-    }
-    else{
+    } else {
       this.employeeService.putEmployee(form.value).subscribe((res) => {
         this.resetForm(form);
         this.refreshEmployeeList();
@@ -49,7 +50,7 @@ export class RegisterUserComponent implements OnInit {
     }
   }
 
-  refreshEmployeeList(){
+  refreshEmployeeList() {
     this.employeeService.getEmployeeList().subscribe((res) => {
       this.employeeService.employees = res as Employee[];
     });
@@ -60,7 +61,7 @@ export class RegisterUserComponent implements OnInit {
   }
 
   onDelete(_id: string, form: NgForm){
-    if (confirm('Are you sure to delete this record?') == true){
+    if (confirm('Are you sure to delete this record?') == true) {
       this.employeeService.deleteEmployee(_id).subscribe((res) => {
         this.refreshEmployeeList();
         this.resetForm(form);
