@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Projects } from './projects.model';
+import { Tasks } from './task.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectsService {
   projects: Projects[];
+  tasks: Tasks[];
   readonly baseURL = 'http://localhost:3000/project';
 
 
@@ -18,6 +20,10 @@ export class ProjectsService {
 
   getAllProjects(_id: string){
     return this.http.get(this.baseURL + `/all/${_id}`);
+  }
+
+  getTasks(_id: string){
+    return this.http.get(this.baseURL + `/tasks/${_id}`);
   }
   
 }

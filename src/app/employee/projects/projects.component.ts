@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../../services/projects.service';
 import { Projects } from '../../services/projects.model';
+import { Tasks } from '../../Services/task.model';
 
 @Component({
   selector: 'app-projects',
@@ -9,10 +10,15 @@ import { Projects } from '../../services/projects.model';
 })
 export class ProjectsComponent implements OnInit {
 
+  flag = false;
+
   constructor(private projectsService: ProjectsService) { }
 
   ngOnInit() {
     this.refreshProjectsList();
+    // this.projectsService.projects.forEach(element => {
+    //   this.getTasks(proj_id);
+    // });
   }
 
   refreshProjectsList(){
@@ -21,5 +27,15 @@ export class ProjectsComponent implements OnInit {
       // console.log("frontend");
     });
   }
+
+  getTasks(id: string){
+    // console.log('front-in');
+    this.projectsService.getTasks(id).subscribe((res) => {
+      this.projectsService.tasks = res as Tasks[];
+      // console.log("frontend");
+    });
+    this.flag = true;
+  }
+
 
 }

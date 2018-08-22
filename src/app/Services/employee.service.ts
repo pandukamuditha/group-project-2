@@ -13,6 +13,7 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
   getEmployee(id: number){
+    // console.log();
     return this.http.get<Employee>(this.baseURL + `/getemp/${id}`);
   }
 
