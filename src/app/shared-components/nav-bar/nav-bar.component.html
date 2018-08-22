@@ -10,24 +10,9 @@
   </div>
   <div class="list">
     <ul class="nav flex-column">
-      <li class="nav-item">
-        <a class="nav-link active" routerLink="/dashboard">
-          Dashboard
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="projects">
-          Projects
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          Employees
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          Messages
+      <li class="nav-item" *ngFor="let link of navLinks">
+        <a class="nav-link" [routerLink]="link.link">
+          {{ link.title }}
         </a>
       </li>
     </ul>

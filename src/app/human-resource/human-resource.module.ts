@@ -10,13 +10,15 @@ import { FormsModule } from '@angular/forms';
 import { FormsModule }   from '@angular/forms';
 import { HrLandingComponent } from './hr-landing/hr-landing.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { SharedModule } from '../shared-components/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
-    HumanResourceRoutingModule
+    SharedModule,
+    HumanResourceRoutingModule,
     HumanResourceRoutingModule,
     FormsModule
   ],

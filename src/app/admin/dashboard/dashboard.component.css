@@ -1,7 +1,8 @@
-.dashboard-projects {
-  margin-top: 3%;
+.container {
+  padding-top: 2%;
+  padding-left: 3%;
 }
 
-.project-card {
-  margin-left: 3%;
+.dashboard-projects {
+  padding-top: 3%;
 }

@@ -1,17 +1,15 @@
-
-<app-navbar></app-navbar>
-
-<div class="row">
-  <div class="col-lg-2  text-center">
-      <img class="rounded-circle" style="margin-top: 10px" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="100" height="100">
-      <h4>Jayanaka Fonseka</h4>
-    <app-sidebar></app-sidebar>
+<div class="row nav-bar">
+  <div class="col-12">
+    <app-top-bar></app-top-bar>
   </div>
-
-  <div class="col-lg-10">
-    <!-- <p>
-      employee works!
-    </p> -->
-    <router-outlet></router-outlet>
-  </div>
+</div>
+<div class="container-fluid">
+    <div class="row content">
+        <div class="col-2 nav-bar">
+            <app-nav-bar></app-nav-bar>
+        </div>
+        <div class="col-10 admin-content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 </div>

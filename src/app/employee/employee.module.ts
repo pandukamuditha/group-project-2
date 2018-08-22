@@ -10,7 +10,6 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule } from '@angular/forms';
 import { ProjectsComponent } from './projects/projects.component';
-import { FormsModule } from '@angular/forms';
 import { AddNotesComponent } from './task-details/add-notes/add-notes.component';
 import { CalendarComponent } from './task-details/calendar/calendar.component';
 import { ProjectDetailsComponent } from './task-details/project-details/project-details.component';
@@ -19,14 +18,15 @@ import { TeamComponent } from './task-details/team/team.component';
 import { TaskDetailsComponent } from './task-details/task-details.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { NgbCalendar, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from '../shared-components/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
-    EmployeeRoutingModule
     EmployeeRoutingModule,
+    SharedModule,
     NgbModule,
     NgCircleProgressModule.forRoot({
       // set defaults here
@@ -45,7 +45,7 @@ import { NgbCalendar, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NavbarComponent,
     SidebarComponent,
     ProfileComponent,
-    ProjectsComponent
+    ProjectsComponent,
     AddNotesComponent,
     CalendarComponent,
     ProjectDetailsComponent,
