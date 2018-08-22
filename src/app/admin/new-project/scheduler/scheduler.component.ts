@@ -3,7 +3,7 @@ import 'dhtmlx-gantt';
 import { } from '@types/dhtmlxgantt';
 import { SchedulerLightboxComponent } from '../scheduler-lightbox/scheduler-lightbox.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Task } from '../../../models/task';
+import { Task } from '../../../models/task_';
 import { TaskService } from '../../../services/task.service';
 import { Promise } from 'q';
 
@@ -24,6 +24,7 @@ export class SchedulerComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    gantt.config.fit_tasks = true;
     gantt.config.xml_date = '%d-%m-%Y %H:%i';
     gantt.config.min_column_width = 20;
     gantt.config.date_scale = '%d';
@@ -65,35 +66,56 @@ export class SchedulerComponent implements OnInit {
   showLightbox(task) {
     let modelRef;
 
-    if (task.$new) {
-      modelRef = this.modalService.open(SchedulerLightboxComponent, { size: 'lg' });
-      modelRef.componentInstance.action.subscribe((data) => {
-        if (data.action === 'save') {
-          this.taskService.addTemporaryTask(data.values).subscribe(
-            (res) => { console.log(res); },
-            (err) => { console.log(err); }
-          );
-        }
-      });
+    modelRef = this.modalService.open(SchedulerLightboxComponent, { size: 'lg' });
+    modelRef.componentInstance.action.subscribe((data) => {
+      switch (data.action) {
+        case 'save':
+          console.log(task.start_date);
+          const taskDetails = {
+            id: task.id,
+            text: data.task.title,
+            start_date: data.task.start_date,
+            duration: data.task.duration
+          };
+          task.$new ? this.saveNewTask(task, taskDetails, data) : this.updateTask();
+          break;
+        case 'discard':
 
-    } else {
-      console.log(task);
-      modelRef = this.modalService.open(SchedulerLightboxComponent, { size: 'lg' });
-      console.log(modelRef.componentInstance);
-      modelRef.componentInstance.task = {
-        title: task.text,
-        description: 'Hahaha',
-        startDate: task.start_date,
-        duration: task.duration
-      };
-    }
+          break;
+        case 'delete':
+
+          break;
+      }
+    });
+
+    // console.log(modelRef.componentInstance);
+    // modelRef.componentInstance.task = {
+    //   title: task.text,
+    //   description: 'Hahaha',
+    //   startDate: task.start_date,
+    //   duration: task.duration
+    // };
   }
+
 
   loadTasks(projectId: number) {
 
   }
 
-  addTemporaryTask(task: Task) {
-    this.taskService.addTemporaryTask(task);
+  saveNewTask(task, taskDetails, data) {
+    this.taskService.addTemporaryTask(data.task).subscribe(
+      (result) => {
+        gantt.addTask(taskDetails, 'Parent');
+        task.$new = false;
+      },
+      (err) => {
+        console.log(err);
+        gantt.deleteTask(task.id);
+      }
+    );
+  }
+
+  updateTask() {
+
   }
 }

@@ -1,0 +1,23 @@
+<!-- <p>
+  add-notes works!
+</p> -->
+<div class="addNotes">
+  <h3 class="notetext">Add Notes</h3>
+
+  <form (ngSubmit)="onSubmit()" #noteForm="ngForm">
+    <div class="form-group form-txt">
+      <input class="form-control " type="text" name="content" #content="ngModel" [(ngModel)]="newNote.note" placeholder="Note content"
+        size=27>
+    </div>
+    <span class="">
+      <button type="submit" class="btn btn-primary btn-sm add-note"><i class="fas fa-plus"></i></button>
+    </span>
+
+  </form>
+  <div class="note-list">
+    <ul *ngFor="let note of notes">
+      <li class="li-note">{{note.note}}<button class="btn btn-danger btn-sm delete-note"><i class="fas fa-trash-alt"></i></button></li>
+    </ul>
+  </div>
+
+</div>

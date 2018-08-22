@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
 import { EmployeeComponent } from './employee.component';
+import { TaskDetailsComponent } from './task-details/task-details.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
       {
         path: 'landing',
         component: LandingComponent
+      },
+      {
+        path: 'task',
+        component: TaskDetailsComponent
       }
     ]
   }

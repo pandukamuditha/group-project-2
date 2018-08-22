@@ -41,7 +41,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="">Role: </span>
               </div>
-              <select class="custom-select" id="task-role" name="task-role" [(ngModel)]="task.role" required>
+              <select class="custom-select" id="task-role" name="task-role" [(ngModel)]="task.type" required>
                 <option *ngFor="let role of roles" [value]="role.value">{{ role.name }}</option>
               </select>
             </div>
@@ -52,7 +52,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="">No of employees: </span>
               </div>
-              <input type="number" class="form-control" id="task-employees" name="task-employees" [(ngModel)]="task.numEmployees" required>
+              <input type="number" class="form-control" id="task-employees" name="task-employees" [(ngModel)]="task.teamRequirement" required>
             </div>
           </div>
            <!-- Skill Level -->
@@ -61,7 +61,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="">Average skill level: </span>
               </div>
-              <select class="custom-select" id="task-skill-level" name="task-skill-level" [(ngModel)]="task.skillLevel" required>
+              <select class="custom-select" id="task-skill-level" name="task-skill-level" [(ngModel)]="task.skillRequirement" required>
                 <option selected>Choose...</option>
                 <option value="0.5">50%</option>
                 <option value="0.6">60%</option>
@@ -73,6 +73,11 @@
             </div>
           </div>
         </div>
+
+        <div class="row">
+          
+        </div>
+        
          <hr>
          <div class="row">
           <div class="col-4">
@@ -81,7 +86,7 @@
                 <span class="input-group-text" id="">Start Date: </span>
               </div>
               <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [placement]="placement" ngbDatepicker #d="ngbDatepicker" name="task-start" id="task-start"
-              [(ngModel)]="task.startDate" required>
+              [(ngModel)]="task.start_date" required>
               <div class="input-group-append">
                 <button class="btn btn-link" (click)="d.toggle()" type="button">
                   <i class="material-icons">

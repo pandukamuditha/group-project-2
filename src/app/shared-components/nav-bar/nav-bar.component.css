@@ -142,13 +142,14 @@ body {
 }
 
 .profile-icon {
+  padding-right: 5%;
   font-size: 75px;
 }
 
 .para{
   color: #353535;
   margin: 0;
-
+  font-size: 0.9rem;
 }
 
 .list {

@@ -1,12 +1,8 @@
 export class Task {
-    id?: number;
-    title: string;
-    description: string;
-    startDate: Date;
-    duration: number;
-    type: string;
-    skillRequirement?: object;
-    teamRequirement?: number;
+    task_id: number;
+    task_description: string;
+    task_progress: string;
+    Employee_emp_id : number;
 
-    constructor() {}
+
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Task } from '../models/task';
+import { Task } from '../models/task_';
 import { HttpClient } from '@angular/common/http';
 
 const baseUrl = 'http://localhost:3000/api/tasks/';

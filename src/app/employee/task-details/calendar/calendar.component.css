@@ -1,0 +1,7 @@
+.calendar{
+    background-color:gainsboro;
+    height: 350px;
+    margin-top:5px ; 
+    text-align: center;
+    overflow-y: scroll
+}

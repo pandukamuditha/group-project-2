@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { Task } from '../../../models/task';
+import { Task } from '../../../models/task_';
 
 @Component({
   selector: 'app-scheduler-lightbox',
@@ -12,7 +12,7 @@ export class SchedulerLightboxComponent {
   // Placement of ngBootstrap Date Picker
   placement = 'top';
   @Output() action = new EventEmitter();
-  public task = new Task(null, null, null, null, null, null, null, null);
+  public task = new Task();
   public roles = [
     {
       name: 'Development',
@@ -27,10 +27,11 @@ export class SchedulerLightboxComponent {
   constructor(public activeModal: NgbActiveModal) { }
 
   saveTask() {
+    this.task.start_date.setHours(0, 0, 0, 0);
     this.action.emit(
       {
         action: 'save',
-        values: this.task
+        task: this.task
       }
     );
     this.activeModal.close();
