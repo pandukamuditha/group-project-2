@@ -1,0 +1,12 @@
+.container-fluid {
+    margin-top: 7vh;
+    height: 100vh;
+}
+
+.content {
+    height: 100vh;
+}
+
+.admin-content {
+    padding-top: 3vh;
+}

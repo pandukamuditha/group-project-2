@@ -18,6 +18,7 @@ import { TeamComponent } from './task-details/team/team.component';
 import { TaskDetailsComponent } from './task-details/task-details.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { NgbCalendar, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from '../shared-components/shared.module';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { NgbCalendar, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     FormsModule,
     EmployeeRoutingModule,
+    SharedModule,
     NgbModule,
     NgCircleProgressModule.forRoot({
       // set defaults here

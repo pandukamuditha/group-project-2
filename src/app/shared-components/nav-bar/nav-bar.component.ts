@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { NavLinksService } from '../../services/nav-links.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,13 +10,16 @@ import { AuthService } from '../../services/auth.service';
 export class NavBarComponent implements OnInit {
   employeeName: string;
   employeeRole: string;
+  public navLinks = {};
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private navLinkService: NavLinksService
   ) { }
 
   ngOnInit() {
     this.getUserDetails();
+    this.getUserNav();
   }
 
   getUserDetails() {
@@ -32,6 +36,10 @@ export class NavBarComponent implements OnInit {
         this.employeeRole = 'Human Resources Manager';
         break;
     }
+  }
+
+  getUserNav() {
+    this.navLinks = this.navLinkService.getUserNav(this.employeeRole);
   }
 
 }
