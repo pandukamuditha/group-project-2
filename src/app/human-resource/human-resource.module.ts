@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { FormsModule } from '@angular/forms';
+import { FormsModule }   from '@angular/forms';
+import { HrLandingComponent } from './hr-landing/hr-landing.component';
 
 @NgModule({
   imports: [
@@ -14,7 +16,14 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     HumanResourceRoutingModule
+    HumanResourceRoutingModule,
+    FormsModule
   ],
-  declarations: [HumanResourceComponent, ManageUsersComponent, RegisterUserComponent]
+  declarations: [
+    HumanResourceComponent, 
+    ManageUsersComponent, 
+    RegisterUserComponent, 
+    HrLandingComponent
+  ]
 })
 export class HumanResourceModule { }

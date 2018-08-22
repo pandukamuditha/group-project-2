@@ -1,3 +1,27 @@
-<p>
-  manage-users works!
-</p>
+
+    <div class="container" style="margin-top: 60px">
+        <h2>Registered users</h2>
+        <br><br>
+      <div class="row">
+        <div class="col-lg-7">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tr *ngFor="let emp of employeeService.employees">
+              <td>{{emp.name}}</td>
+              <td>{{emp.position}}</td>
+              <td>{{emp.office}}</td>
+              <td><a class="action-btn" (click)="onEdit(emp)"><i class="fas fa-pencil-alt"></i></a> &nbsp;&nbsp;&nbsp;
+                <a class="action-btn" (click)= "onDelete(emp._id,employeeForm)"><i class="fas fa-trash-alt"></i></a>
+                </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </div>

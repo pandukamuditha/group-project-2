@@ -1,0 +1,10 @@
+.team{
+    background-color:gainsboro;
+    height: 268px;
+    margin-top:5px ; 
+    overflow-y: auto;
+}
+
+h3{
+    text-align: center;
+}
