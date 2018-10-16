@@ -4,6 +4,8 @@ import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewProjectComponent } from './new-project/new-project.component';
 import { SchedulerComponent } from './new-project/scheduler/scheduler.component';
+import { ProjectDetailsComponent } from './new-project/project-details/project-details.component';
+import { AllocationComponent } from './new-project/allocation/allocation.component';
 
 const routes: Routes = [
   {
@@ -19,8 +21,16 @@ const routes: Routes = [
         component: NewProjectComponent,
         children: [
           {
+            path: 'project-details',
+            component: ProjectDetailsComponent
+          },
+          {
             path: 'schedule',
             component: SchedulerComponent
+          },
+          {
+            path: 'allocation',
+            component: AllocationComponent
           }
         ]
       }

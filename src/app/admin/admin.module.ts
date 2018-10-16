@@ -11,6 +11,8 @@ import { SchedulerComponent } from './new-project/scheduler/scheduler.component'
 import { SchedulerLightboxComponent } from './new-project/scheduler-lightbox/scheduler-lightbox.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProjectDetailsComponent } from './new-project/project-details/project-details.component';
+import { AllocationComponent } from './new-project/allocation/allocation.component';
 
 
 
@@ -27,7 +29,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DashboardComponent,
     NewProjectComponent,
     SchedulerComponent,
-    SchedulerLightboxComponent
+    SchedulerLightboxComponent,
+    ProjectDetailsComponent,
+    AllocationComponent
   ],
   exports: [
     AdminRoutingModule
