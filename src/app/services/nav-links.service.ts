@@ -8,11 +8,11 @@ export class NavLinksService {
     'Project Manager': [
       {
         'title': 'Dashboard',
-        'link': './dashboard'
+        'link': ''
       },
       {
         'title': 'Projects',
-        'link': './projects'
+        'link': 'projects'
       }
     ],
     'Human Resources Manager': [

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar',
@@ -9,6 +10,7 @@ import { AuthService } from '../../services/auth.service';
 export class TopBarComponent implements OnInit {
 
   constructor(
+    private router: Router,
     private authService: AuthService
   ) { }
 
@@ -17,6 +19,20 @@ export class TopBarComponent implements OnInit {
 
   logout() {
     this.authService.logout();
+  }
+
+  authRedirect(userRole: string): void {
+    switch (userRole) {
+      case 'employee':
+        this.router.navigateByUrl('employee');
+        break;
+      case 'pm':
+        this.router.navigateByUrl('admin');
+        break;
+      case 'hr':
+        this.router.navigateByUrl('hrm');
+        break;
+    }
   }
 
 }
