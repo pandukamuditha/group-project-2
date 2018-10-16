@@ -55,14 +55,32 @@
                               <th>Skill Level</th>
                             </tr>
                           </thead>
-                          <tr *ngFor="let emp of employeeService.skills">
+                          <!-- <tr *ngFor="let emp of employeeService.skills"> -->
                             <!-- <td><input type="text" class="form-control" name="contactno" #contactno="ngModel" [(ngModel)]="employeeService.skills.skill_level" placeholder="{{emp.skill_level}}"></td> -->
-                            <td>{{emp.skill_name}}</td>
-                            <td>{{emp.skill_level}}</td>
+                            <!-- <td>{{emp.skill_name}}</td> -->
+                            <!-- <td>{{emp.skill_level}}</td> -->
                             <!-- <td><a class="action-btn" (click)="onEdit(emp)" [routerLink] = "['/hrmanager/update']" ><i class="fas fa-pencil-alt"></i></a> &nbsp;&nbsp;&nbsp;
                               <a class="action-btn" (click)= "onDelete(emp.emp_id)"><i class="fas fa-trash-alt"></i></a>
                             </td> -->
+                          <!-- </tr> -->
+
+                          <tr>
+                            <td>Angular</td>
+                            <td>0.6</td>
                           </tr>
+                          <tr>
+                            <td>NodeJS</td>
+                            <td>0.2</td>
+                          </tr>
+                          <tr>
+                            <td>JavaScript</td>
+                            <td>0.9</td>
+                          </tr>
+                          <tr>
+                            <td>MySQL</td>
+                            <td>0.5</td>
+                          </tr>
+
                         </table>
                     </div>
                   </div>

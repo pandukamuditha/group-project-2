@@ -39,13 +39,13 @@ export class LoginComponent implements OnInit {
   authRedirect(userRole: string): void {
     switch (userRole) {
       case 'employee':
-        this.router.navigateByUrl('employee');
+        this.router.navigateByUrl('employee/landing');
         break;
       case 'pm':
         this.router.navigateByUrl('admin');
         break;
       case 'hr':
-        this.router.navigateByUrl('hrm');
+        this.router.navigateByUrl('hrm/register');
         break;
     }
   }
